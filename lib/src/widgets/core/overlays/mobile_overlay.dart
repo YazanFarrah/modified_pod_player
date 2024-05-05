@@ -24,11 +24,13 @@ class _MobileOverlay extends StatelessWidget {
                 Expanded(
                   child: DoubleTapIcon(
                     tag: tag,
-                    isForward: _isRtl() ? true : false,
+                    isForward: false,
                     height: double.maxFinite,
-                    onDoubleTap: _isRtl()
-                        ? podCtr.onRightDoubleTap
-                        : podCtr.onLeftDoubleTap,
+                    onDoubleTap:
+                        // _isRtl()
+                        //     ? podCtr.onRightDoubleTap
+                        // :
+                        podCtr.onLeftDoubleTap,
                   ),
                 ),
                 SizedBox(
@@ -39,12 +41,14 @@ class _MobileOverlay extends StatelessWidget {
                 ),
                 Expanded(
                   child: DoubleTapIcon(
-                    isForward: _isRtl() ? false : true,
+                    isForward: true,
                     tag: tag,
                     height: double.maxFinite,
-                    onDoubleTap: _isRtl()
-                        ? podCtr.onLeftDoubleTap
-                        : podCtr.onRightDoubleTap,
+                    onDoubleTap:
+                        // _isRtl()
+                        // ? podCtr.onLeftDoubleTap
+                        // :
+                        podCtr.onRightDoubleTap,
                   ),
                 ),
               ],
@@ -86,23 +90,23 @@ class _MobileOverlay extends StatelessWidget {
     );
   }
 
-  bool _isRtl() {
-    final Locale locale = WidgetsBinding.instance.platformDispatcher.locale;
-    final langs = [
-      'ar', // Arabic
-      'fa', // Farsi
-      'he', // Hebrew
-      'ps', // Pashto
-      'ur', // Urdu
-    ];
-    for (int i = 0; i < langs.length; i++) {
-      final lang = langs[i];
-      if (locale.toString().contains(lang)) {
-        return true;
-      }
-    }
-    return false;
-  }
+  // bool _isRtl() {
+  //   final Locale locale = WidgetsBinding.instance.platformDispatcher.locale;
+  //   final langs = [
+  //     'ar', // Arabic
+  //     'fa', // Farsi
+  //     'he', // Hebrew
+  //     'ps', // Pashto
+  //     'ur', // Urdu
+  //   ];
+  //   for (int i = 0; i < langs.length; i++) {
+  //     final lang = langs[i];
+  //     if (locale.toString().contains(lang)) {
+  //       return true;
+  //     }
+  //   }
+  //   return false;
+  // }
 
   void _bottomSheet(BuildContext context) {
     showModalBottomSheet<void>(
