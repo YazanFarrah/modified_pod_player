@@ -24,7 +24,7 @@ class _MobileOverlay extends StatelessWidget {
                 Expanded(
                   child: DoubleTapIcon(
                     tag: tag,
-                    isForward: false,
+                    isForward: _isRtl() ? true : false,
                     height: double.maxFinite,
                     onDoubleTap: _isRtl()
                         ? podCtr.onRightDoubleTap
@@ -39,7 +39,7 @@ class _MobileOverlay extends StatelessWidget {
                 ),
                 Expanded(
                   child: DoubleTapIcon(
-                    isForward: true,
+                    isForward: _isRtl() ? false : true,
                     tag: tag,
                     height: double.maxFinite,
                     onDoubleTap: _isRtl()
