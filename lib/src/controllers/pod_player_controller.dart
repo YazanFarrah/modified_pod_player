@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:universal_html/html.dart' as uni_html;
 import 'package:wakelock_plus/wakelock_plus.dart';
-
+import 'package:uuid/uuid.dart';
 import '../../pod_player.dart';
 import '../utils/logger.dart';
 import '../utils/video_apis.dart';
@@ -29,7 +29,7 @@ class PodPlayerController {
   }
 
   void _init() {
-    getTag = UniqueKey().toString();
+    getTag = const Uuid().v4();
     Get.config(enableLog: PodVideoPlayer.enableGetxLogs);
     _ctr = Get.put(PodGetXVideoController(), permanent: true, tag: getTag)
       ..config(
