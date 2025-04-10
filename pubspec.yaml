@@ -11,13 +11,12 @@ dependencies:
   flutter:
     sdk: flutter
   # services
-  video_player: ^2.8.5
+  video_player: ^2.9.5
   http: ^1.2.1
-  get: ^4.6.6
-  wakelock_plus: ^1.2.4
+  get: ^4.7.2
+  wakelock_plus: ^1.2.11
   universal_html: ^2.2.4
-  youtube_explode_dart:
-    git: https://github.com/rsozdance/youtube_explode_dart.git
+  youtube_explode_dart: ^2.4.0
 
 dev_dependencies:
   flutter_test:
